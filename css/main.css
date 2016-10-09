@@ -1,0 +1,74 @@
+*; html {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-image: url(../img/images.jpg) !important;
+}
+
+.colortextblanco {
+	color: #B02F04;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 4em;
+}
+
+.clasehr {
+    height: 1px;
+    border: 0;
+    background-color: #EA4E3A !important;
+    margin-top: -93px !important;
+}
+
+.logopag {
+    width: 7%;
+    position: relative;
+    bottom: 91px;
+    left: 1252px;
+}
+
+.arbol {
+    width: 13%;
+    position: relative;
+    top: 2px;
+    right: 205px;
+}
+
+.corazon {
+    width: 5%;
+    position: relative;
+    left: 1181px;
+    bottom: 162px;
+}
+
+.corazondos {
+    width: 5%;
+    position: relative;
+    left: 1164px;
+    bottom: 34px;
+
+}
+
+.corazontres {
+    width: 5%;
+    position: relative;
+    left: 1049px;
+    bottom: -102px;
+}
+
+#seleccionar {
+    position: relative;
+    left: 501px;
+    background-color: beige;
+    font-family: 'Satisfy', cursive;
+    font-size: 1.5em;
+}
+
+#cajaSelector {
+    width: 273px;
+    height: 206px;
+    bottom: 82px;
+    background-color: beige;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1em; 
+}
