@@ -65,10 +65,13 @@ body {
 }
 
 #cajaSelector {
-    width: 273px;
     height: 206px;
     bottom: 82px;
     background-color: beige;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1em; 
+}
+
+.ocultar {
+    display: none;
 }

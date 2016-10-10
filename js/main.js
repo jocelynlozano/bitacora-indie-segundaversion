@@ -1,14 +1,15 @@
 window.addEventListener("load", cargarPagina)
     var cajaSelector = document.getElementById("cajaSelector");
     var seleccionar = document.getElementById("seleccionar");
-    var contenedorDePublicacion = document.createElement("contenedorDePublicacion")
+    var contenedorDePublicacion = document.createElement("contenedorDePublicacion");
+    var contenedorOpcion = document.createElement("div");
 
     
-    function cargarPagina() {
+    function cargarPagina(){
         seleccionar.addEventListener("change", seleccionarOpcion);
-    }
+    };
     
-    function seleccionarOpcion (){
+    function seleccionarOpcion(){
         var seleccionarValor = seleccionar.value;
         switch(seleccionar.value){
             case "Texto":
@@ -45,7 +46,8 @@ window.addEventListener("load", cargarPagina)
         contenedor.appendChild(botonCerrar);
         contenedor.appendChild(botonPublicar);
         
-        cajaSelector.appendChild(contenedor);
+        cajaSelector.insertBefore(contenedorOpcion, cajaSelector.children[0]);
+        contenedorOpcion.appendChild(contenedor);
 
         botonPublicar.addEventListener("click", publicar);
         botonCerrar.addEventListener("click", cerrar);
@@ -70,7 +72,8 @@ window.addEventListener("load", cargarPagina)
         contenedor.appendChild(botonCerrar);
         contenedor.appendChild(botonPublicar);
 
-        cajaSelector.appendChild(contenedor);
+        cajaSelector.insertBefore(contenedorOpcion, cajaSelector.children[0]);
+        contenedorOpcion.appendChild(contenedor);
 
         botonPublicar.addEventListener("click", publicar);
         botonCerrar.addEventListener("click", cerrar)
@@ -95,7 +98,8 @@ window.addEventListener("load", cargarPagina)
         contenedor.appendChild(botonCerrar);
         contenedor.appendChild(botonPublicar);
 
-        cajaSelector.appendChild(contenedor);
+        cajaSelector.insertBefore(contenedorOpcion, cajaSelector.children[0]);
+        contenedorOpcion.appendChild(contenedor);
 
         botonPublicar.addEventListener("click", publicar);
         botonCerrar.addEventListener("click", cerrar)
@@ -107,10 +111,13 @@ window.addEventListener("load", cargarPagina)
         var textarea = document.createElement("textarea");
         var botonCerrar = document.createElement("button");
         var botonPublicar = document.createElement("button");
+        var cambioColor = document.createElement("input");
         
         contenedor.setAttribute("id", "contenedor");
         input.setAttribute("placeholder", "escribe un titulo");
         textarea.setAttribute("placeholder", "escribe un texto");
+        cambioColor.setAttribute("type", "color");
+        
 
         botonCerrar.textContent = "cerrar";
         botonPublicar.textContent = "publicar";
@@ -119,16 +126,18 @@ window.addEventListener("load", cargarPagina)
         contenedor.appendChild(textarea);
         contenedor.appendChild(botonCerrar);
         contenedor.appendChild(botonPublicar);
+        contenedor.appendChild(cambioColor);
 
-        cajaSelector.appendChild(contenedor);
+        cajaSelector.insertBefore(contenedorOpcion, cajaSelector.children[0]);
+        contenedorOpcion.appendChild(contenedor);
 
         botonPublicar.addEventListener("click", publicar);
         botonCerrar.addEventListener("click", cerrar)
     };
 
-    function cerrar() {
-        this.parentElement.remove();
-    }
+    function cerrar(){
+        this.parentElement.classList.add("ocultar");
+    };
 
     function publicar(){
         var valorTitulo = document.createElement("h2");
@@ -144,7 +153,7 @@ window.addEventListener("load", cargarPagina)
         valorTitulo.innerText = titulo;
         valorParrafo.innerText = parrafo;
         divHora.innerHTML = horaPub;
-        botonEliminar.textContent = "Eliminar"
+        botonEliminar.textContent = "Eliminar";
 
         cajaSelector.appendChild(contenedorDePublicacion);
         contenedorDePublicacion.appendChild(divPublicacion);
@@ -154,13 +163,11 @@ window.addEventListener("load", cargarPagina)
         divPublicacion.appendChild(botonEliminar);
 
         botonEliminar.addEventListener("click", eliminar);
-        // titulo = ";";
-        // texto = ",";
-    }
+    };
 
     function eliminar(){
         this.parentElement.remove();
-    }
+    };
 
     function fechaPub(){
         var fecha = new Date();
